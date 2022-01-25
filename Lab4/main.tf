@@ -4,24 +4,18 @@ provider "aws" {
   region                  = "us-west-2"
 }
 
-resource "aws_instance" "lab2-web" {
+
+resource "aws_instance" "lab4-web" {
   ami                    = "ami-066333d9c572b0680" #Amazon linux 2
   instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.web.id]
-  user_data              = <<EOF
-  #!/bin/bash
-  echo Hi
-  yum update 
-  yum install httpd -y
-  MYIP=`curl http://169.254.169.254/latest/meta-data/local-ipv4`
-  echo "<h2>Web  Fuck with IP:$MYIP</h2><br>Buid by Terraform" > /var/www/html/index.html
-  systemctl status apache2
-  systemctl enable apache2.service
-  systemctl status httpd
-  systemctl enable httpd.service
-  EOF
+  user_data = templatefile("userdata.sh.tpl", {
+    f_name = "Sergey"
+    l_name = "CC"
+    names  = ["John", "Egor", "Denis", "Putin", "Jopa"]
+  })
   tags = {
-    Name  = "LAB2 Terraform web server"
+    Name  = "Lab-4 Terraform web server"
     Owner = "Serg"
   }
 }
