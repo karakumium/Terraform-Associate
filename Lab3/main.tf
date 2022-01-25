@@ -12,7 +12,7 @@ resource "aws_instance" "lab3-web" {
   user_data              = file("userdata.sh")
   tags = {
     Name  = "Terraform web server"
-    Owner = "Serg"
+    Owner = "Akhmed"
   }
 }
 

@@ -6,7 +6,7 @@ provider "aws" {
 
 resource "aws_security_group" "web" {
   name        = "Lab-5 Web server SG"
-  description = "dfdfd"
+  description = "This is a web servers"
 
 
   dynamic "ingress" {

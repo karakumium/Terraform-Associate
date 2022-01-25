@@ -10,19 +10,19 @@ resource "aws_instance" "lab4-web" {
   instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.web.id]
   user_data = templatefile("userdata.sh.tpl", {
-    f_name = "Sergey"
+    f_name = "Khalif"
     l_name = "CC"
-    names  = ["John", "Egor", "Denis", "Putin", "Jopa"]
+    names  = ["John", "Egor", "Denis", "Bitch", "Jopa"]
   })
   tags = {
     Name  = "Lab-4 Terraform web server"
-    Owner = "Serg"
+    Owner = "Iguana"
   }
 }
 
 resource "aws_security_group" "web" {
   name        = "Web server SG"
-  description = "dfdfd"
+  description = "This is a web server"
   ingress {
     from_port   = 80
     to_port     = 80

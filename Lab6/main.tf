@@ -27,7 +27,7 @@ resource "aws_eip" "lb" {
   vpc      = true
   tags = {
     Name  = "LAB6 Terraform web server"
-    Owner = "Serg"
+    Owner = "Ildus"
   }
 }
 

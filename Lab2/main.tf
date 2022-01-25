@@ -22,7 +22,7 @@ resource "aws_instance" "lab2-web" {
   EOF
   tags = {
     Name  = "LAB2 Terraform web server"
-    Owner = "Serg"
+    Owner = "Zukhra"
   }
 }
 

@@ -10,6 +10,6 @@ resource "aws_instance" "LAB1-my-web" {
 
   tags = {
     Name  = "Terraform Ubuntu"
-    Owner = "Sergey"
+    Owner = "Akhmed"
   }
 }
